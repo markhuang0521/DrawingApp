@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_size"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/spinnerBrushSize"
+
+        android:text="Size:" />
+
+    <Spinner
+        android:id="@+id/spinnerBrushSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@id/text_color"
+
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/text_color"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toStartOf="@id/spinnerColor"
+        android:text="Color:" />
+
+    <Spinner
+        android:id="@+id/spinnerColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+
+        android:textAlignment="center" />
+
+    <ImageButton
+        android:id="@+id/imageBtnChangeImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/spinnerBrushSize"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <ImageButton
+        android:id="@+id/imageBtnUndo"
+        android:background="@android:color/transparent"
+
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/imageBtnChangeImage"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_delete" />
+
+    <ImageButton
+        android:id="@+id/imageBtnSave"
+android:background="@android:color/transparent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/imageBtnUndo"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_save" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout_drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/spinnerBrushSize"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/drawing_view_bg">
+
+        <ImageView
+            android:id="@+id/ivPaintBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <com.ming.drawingapp.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/spinnerBrushSize"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
+
+
+</RelativeLayout>
